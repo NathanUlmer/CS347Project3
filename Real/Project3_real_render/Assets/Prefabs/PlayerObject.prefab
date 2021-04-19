@@ -64,7 +64,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &3187720071285138744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,5 +77,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf57faf81bddc8439ca9b5fc331c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PPrefab: {fileID: 7836308468838629229, guid: 7be9734dab18eea4e8af93dae3496937, type: 3}
+  PPrefab: {fileID: 4449395921560347815, guid: 7be9734dab18eea4e8af93dae3496937, type: 3}
   movementSpeed: 0

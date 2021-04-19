@@ -14,7 +14,7 @@ Material:
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -27,8 +27,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_B4E6029E: 0.9
-    - Vector1_C93248F6: 25
-    - Vector1_EE85D987: 6
+    - Vector1_B4E6029E: 0.8
+    - Vector1_C93248F6: 20
+    - Vector1_EE85D987: 3
     m_Colors:
-    - Color_8162482B: {r: 6.8831816, g: 1.9460304, b: 0.3964136, a: 0}
+    - Color_8162482B: {r: 1.4415036, g: 13.76636, b: 0.792827, a: 0}
