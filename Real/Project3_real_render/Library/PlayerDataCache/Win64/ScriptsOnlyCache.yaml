@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CameraFollow
     - PlayerController
     - PlayerObjectController
     Unity.2D.Tilemap.Editor.dll:
@@ -12,6 +13,12 @@ ScriptsOnlyBuild:
     Unity.RenderPipelines.Lightweight.Runtime.dll:
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -23,27 +30,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkTransform
   sceneClasses:
     Assets/Scenes/InGame.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    Assets/Scenes/Lobby.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -75,20 +61,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10204}
     - Class: 114
-      Script: {instanceID: 10342}
-    - Class: 114
-      Script: {instanceID: 11632}
-    - Class: 114
-      Script: {instanceID: 12310}
-    - Class: 114
-      Script: {instanceID: 13342}
-    - Class: 114
-      Script: {instanceID: 13528}
-    - Class: 114
-      Script: {instanceID: 16328}
+      Script: {instanceID: 11114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    Assets/Scenes/Lobby.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 10204}
+    - Class: 114
+      Script: {instanceID: 10342}
+    - Class: 114
+      Script: {instanceID: 11634}
+    - Class: 114
+      Script: {instanceID: 12312}
+    - Class: 114
+      Script: {instanceID: 13344}
+    - Class: 114
+      Script: {instanceID: 13530}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
@@ -391,6 +422,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 7b275de5630d11b488b88d361968f502
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollow
+  - hash:
+      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -583,7 +620,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 7dc8a3d0633f165e94996c735e1f28bf
+      Hash: c3c38dcb46850d4e2799304cc8f5e850
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerObjectController
@@ -805,7 +842,7 @@ ScriptsOnlyBuild:
     className: Light2D
   - hash:
       serializedVersion: 2
-      Hash: a3bfd2e37c591c26dc01a11a084cf938
+      Hash: c25a8ae1bfb4b6a3c8df88313fc96b7f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

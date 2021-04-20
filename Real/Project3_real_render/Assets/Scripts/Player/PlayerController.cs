@@ -6,12 +6,17 @@ public class PlayerController : NetworkBehaviour
 {
     public GameObject PPrefab;
     public float movementSpeed;
+    public Behaviour[] disableOnLoad;
     // Start is called before the first frame update
     void Start()
     {
         if(isLocalPlayer == false)
         {
             // this object is not mine
+            for(int i = 0; i< disableOnLoad.Length;i++)
+            {
+                disableOnLoad[i].enabled = false;
+            }
             return;
         }
         Debug.Log("PlayerObject Loading");
@@ -27,34 +32,39 @@ public class PlayerController : NetworkBehaviour
         //if (isLocalPlayer)
         //{
         //    Vector3 movement = Vector3.zero;
-        //    if (Input.GetKeyDown("w"))
+        //    if (Input.GetKey("d"))
         //    {
+                
         //        movement += new Vector3(1, 0, 0);
         //    }
 
-        //    if (Input.GetKeyDown("a"))
+        //    if (Input.GetKey("s"))
         //    {
         //        movement += new Vector3(0, 0, -1);
         //    }
 
-        //    if (Input.GetKeyDown("s"))
+        //    if (Input.GetKey("a"))
         //    {
         //        movement += new Vector3(-1, 0, 0);
         //    }
 
-        //    if (Input.GetKeyDown("d"))
+        //    if (Input.GetKey("w"))
         //    {
         //        movement += new Vector3(0, 0, 1);
         //    }
 
-        //    transform.position += Vector3.ClampMagnitude(movement, 1) * movementSpeed;
+        //    CmdMove(Vector3.ClampMagnitude(movement, 1) * movementSpeed);
         //}
 
 
-        if(!isLocalPlayer)
+
+        if (!isLocalPlayer)
         {
             return;
         }
+
+
+        CmdUpdate();
 
         //if(Input.GetKeyDown(KeyCode.Space))
         //{
@@ -70,9 +80,9 @@ public class PlayerController : NetworkBehaviour
     void CmdSpawnMyPlayer()
     {
         // Create Player object on server and sets position
-        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 21, -33);
+        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 30, -33);
         GameObject go = Instantiate(PPrefab, position, Quaternion.identity);
-
+        
         //go.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
         myPlayerUnit = go;
 
@@ -81,10 +91,19 @@ public class PlayerController : NetworkBehaviour
     }
 
     [Command]
-    void CmdJump()
+    void CmdUpdate()
     {
         if (myPlayerUnit == null) return;
 
-        myPlayerUnit.transform.Translate(0, 1, 0);
+        //myPlayerUnit.GetComponent<PlayerObjectController>().serverUpdate();
+    }
+
+    [Command]
+    void CmdMove(Vector3 movement)
+    {
+        if (myPlayerUnit == null) return;
+
+        myPlayerUnit.transform.localPosition += movement;
+
     }
 }
