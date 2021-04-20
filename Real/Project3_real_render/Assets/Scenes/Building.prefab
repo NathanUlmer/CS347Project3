@@ -2058,11 +2058,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2164683023096098377}
     m_Modifications:
-    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall Right (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1286480552491572970, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2117,6 +2112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall Right (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae0bc3968659cc4d86a18e4a84af21c, type: 3}
@@ -2283,11 +2283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2164683023096098377}
     m_Modifications:
-    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall Right (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1286480552491572970, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2342,6 +2337,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall Right (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae0bc3968659cc4d86a18e4a84af21c, type: 3}
@@ -2433,11 +2433,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2164683023096098377}
     m_Modifications:
-    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall Right
-      objectReference: {fileID: 0}
     - target: {fileID: 1286480552491572970, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2492,6 +2487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064547049421703942, guid: 7ae0bc3968659cc4d86a18e4a84af21c,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall Right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae0bc3968659cc4d86a18e4a84af21c, type: 3}
