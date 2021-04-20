@@ -15,6 +15,9 @@ ModelImporter:
   - first:
       74: 4436552065612061661
     second: metarig|Spawn
+  - first:
+      74: -2483591982332496685
+    second: metarig|Run
   externalObjects: {}
   materials:
     importMaterials: 1

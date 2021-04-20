@@ -21,6 +21,12 @@ ModelImporter:
   - first:
       74: 2232361667514112010
     second: Character-colonly|Spawn.002
+  - first:
+      74: -3773978416974654382
+    second: metarig|Get_In_Vehicle_Gunner
+  - first:
+      74: 4436552065612061661
+    second: metarig|Spawn
   externalObjects: {}
   materials:
     importMaterials: 1
