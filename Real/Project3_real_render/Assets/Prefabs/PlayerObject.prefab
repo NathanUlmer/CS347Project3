@@ -77,6 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf57faf81bddc8439ca9b5fc331c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PPrefab: {fileID: 1068674040174451864, guid: 137edff49bfb3462b91806641e7d3cf8, type: 3}
+  PPrefab: {fileID: 8740986420252436073, guid: fa69e7db53efea2448412fe36d4a3999, type: 3}
   movementSpeed: 10
   disableOnLoad: []

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -498,10 +498,12 @@ MonoBehaviour:
   m_OnlineScene: InGame
   m_SpawnPrefabs:
   - {fileID: 4238800174725128986, guid: e7115f9e429422640bd840e284634881, type: 3}
-  - {fileID: 1068674040174451864, guid: 137edff49bfb3462b91806641e7d3cf8, type: 3}
-  - {fileID: 2488055492441575175, guid: d8d2870b58c6b4c61b96ec0300402dbc, type: 3}
-  - {fileID: 8909937553544440437, guid: 738006af271a946a5b17c7ff99537bc4, type: 3}
-  - {fileID: 0}
+  - {fileID: 8740986420252436073, guid: fa69e7db53efea2448412fe36d4a3999, type: 3}
+  - {fileID: 224152067294395831, guid: 1e3de7a0bb571c649a7bfab953d3a4fa, type: 3}
+  - {fileID: 1598215696620666559, guid: 3d2078f4ac1a23543b9578b94a96ae0e, type: 3}
+  - {fileID: 6993329513267151516, guid: 4f19dd3cc18ec664e98d294a2610f0c4, type: 3}
+  - {fileID: 1774851983728419914, guid: 7e6181baac43f2b4cafc7dfcaafdbe5f, type: 3}
+  - {fileID: 2454892647854847262, guid: 1e58fdbb05ad8b44782e04e5492bd72e, type: 3}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
