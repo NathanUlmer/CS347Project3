@@ -5,21 +5,27 @@ public class EnterVehicle : MonoBehaviour
 {
     private bool inVehicle = false;
     VehicleController vehicleScript;
+    public GameObject guiObj;
     GameObject player;
 
-    //Initialize Car
+
     void Start()
     {
-
+        vehicleScript = GetComponent<VehicleController>();
+        player = GameObject.FindWithTag("Player");
+        guiObj.SetActive(false);
+        vehicleScript.enabled = false;
     }
 
-    //Enter Car
+    // Update is called once per frame
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player" && inVehicle == false)
         {
+            guiObj.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
+                guiObj.SetActive(false);
                 player.transform.parent = gameObject.transform;
                 vehicleScript.enabled = true;
                 player.SetActive(false);
@@ -27,12 +33,16 @@ public class EnterVehicle : MonoBehaviour
             }
         }
     }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            guiObj.SetActive(false);
+        }
+    }
     void Update()
     {
-        //vehicleScript = GetComponent<VehicleController>();
-        player = GameObject.FindWithTag("Player");
-        //Exit Vehicle
-        if (inVehicle == true && Input.GetKey(KeyCode.E))
+        if (inVehicle == true && Input.GetKey(KeyCode.F))
         {
             vehicleScript.enabled = false;
             player.SetActive(true);

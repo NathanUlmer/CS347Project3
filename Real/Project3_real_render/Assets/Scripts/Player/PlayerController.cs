@@ -80,7 +80,7 @@ public class PlayerController : NetworkBehaviour
     void CmdSpawnMyPlayer()
     {
         // Create Player object on server and sets position
-        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 30, -33);
+        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 25, -33);
         GameObject go = Instantiate(PPrefab, position, Quaternion.identity);
         
         //go.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
