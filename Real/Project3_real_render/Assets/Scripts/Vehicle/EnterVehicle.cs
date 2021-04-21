@@ -32,8 +32,9 @@ public class EnterVehicle : MonoBehaviour
 
                 //Disable Character
                 playerRender = GetComponentInChildren(typeof(SkinnedMeshRenderer), true) as SkinnedMeshRenderer;
+                
+                if(playerRender != null) playerRender.enabled = false;
                 player.SetActive(false);
-                playerRender.enabled = false;
                 inVehicle = true;
             }
         }

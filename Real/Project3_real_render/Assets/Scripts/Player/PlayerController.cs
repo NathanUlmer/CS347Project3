@@ -79,15 +79,36 @@ public class PlayerController : NetworkBehaviour
     [Command]
     void CmdSpawnMyPlayer()
     {
+        if (connectionToClient.isReady)
+        {
+            Spawn();
+        }
+        else
+        {
+            StartCoroutine(WaitForReady());
+        }
+    }
+
+    IEnumerator WaitForReady()
+    {
+        while (!connectionToClient.isReady)
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+        Spawn();
+    }
+
+    void Spawn()
+    {
         // Create Player object on server and sets position
-        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 25, -33);
+        Vector3 position = new Vector3(Random.Range(-8.0F, 8.0F), 30, -33);
         GameObject go = Instantiate(PPrefab, position, Quaternion.identity);
-        
+
         //go.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
         myPlayerUnit = go;
 
         // Make server propagate object to clients
-        NetworkServer.SpawnWithClientAuthority(go,connectionToClient);
+        NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }
 
     [Command]
