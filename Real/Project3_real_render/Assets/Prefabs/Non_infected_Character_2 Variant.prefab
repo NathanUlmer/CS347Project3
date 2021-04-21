@@ -142,6 +142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Non_infected_Character_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c991bd5ba0bc64a38b6f7627360cc55f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c991bd5ba0bc64a38b6f7627360cc55f,
         type: 3}
       propertyPath: m_LocalPosition.x

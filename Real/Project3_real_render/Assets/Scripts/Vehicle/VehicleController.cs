@@ -33,7 +33,7 @@ public class VehicleController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
-        UpdateWheels();
+        //UpdateWheels();
     }
 
     private void GetInput()

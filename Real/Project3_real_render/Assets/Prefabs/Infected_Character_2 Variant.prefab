@@ -176,6 +176,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infected_Character_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 598d1ffdb26cb4794a6e3c46da3cf550,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 598d1ffdb26cb4794a6e3c46da3cf550,
         type: 3}
       propertyPath: m_LocalPosition.x

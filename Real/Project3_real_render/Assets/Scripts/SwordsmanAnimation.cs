@@ -33,7 +33,7 @@ public bool isRunning, isLongSwing, isShortSwing, isIdle;
             anim.SetBool("IsLongSwing", false);
             anim.SetBool("isShortSwing", false);
             anim.SetBool("IsIdle", false);
-        }   
+        }
         else
         {
             isRunning = false;
