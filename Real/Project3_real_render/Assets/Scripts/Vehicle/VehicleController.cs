@@ -14,6 +14,18 @@ public class VehicleController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
+    //Camera Variables
+    /*[SerializeField] private Vector3 offset;
+    [SerializeField] private Transform target;
+    [SerializeField] private float transSpeed;
+    [SerializeField] private float rotSpeed;*/
+
+    //Camera Controls
+    public CameraFollow cameracontrol;
+    public Camera cam;
+    CameraFollow tf = null;
+    float camDir = 0.0f;
+
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
@@ -36,6 +48,37 @@ public class VehicleController : MonoBehaviour
         //UpdateWheels();
     }
 
+    private void Start()
+    {
+        // yaw += Input.GetAxis("Mouse X") * Time.deltaTime * 100.0f;
+        // transform.eulerAngles = new Vector3(0, yaw, 0);
+
+        //Transform Camera
+        /*var targetPos = target.TransformPoint(offset);
+        transform.position = Vector3.Lerp(transform.position, targetPos, transSpeed * Time.deltaTime);
+        var direction = target.position - transform.position;
+        var rot = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rot, rotSpeed * Time.deltaTime);*/
+
+    }
+
+    //Camera Update
+    private void LateUpdate()
+    {
+        //Get Camera
+        if (cam == null)
+        {
+            cam = Camera.main;
+            tf = cam.GetComponent<CameraFollow>();
+        }
+        Debug.Log(cam);
+        camDir = cam.transform.eulerAngles.y;
+
+        //Transform notTarget = this.GetComponent<Transform>();
+        //notTarget.position += new Vector3(0f, 0f, 0f);
+        tf.setTarget(transform);
+    }
+
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
@@ -45,10 +88,10 @@ public class VehicleController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        frontLeftWheelCollider.motorTorque = -verticalInput * motorForce;
+        frontRightWheelCollider.motorTorque = -verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
-        ApplyBreaking();
+        ApplyBreaking();       
     }
 
     private void ApplyBreaking()
@@ -77,8 +120,8 @@ public class VehicleController : MonoBehaviour
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         Vector3 pos;
-        Quaternion rot;
-        wheelCollider.GetWorldPose(out pos, out rot);
+        Quaternion rot
+;       wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }

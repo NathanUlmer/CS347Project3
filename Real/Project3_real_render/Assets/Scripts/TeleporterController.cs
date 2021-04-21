@@ -11,14 +11,14 @@ public class TeleporterController : MonoBehaviour
 
     private void Start()
     {
-        controller.enabled = true;
+        //controller.enabled = true;
     }
 
     //Teleport the player when they collide
-    void OnTriggerEnter(Collider player)
+    void OnTriggerEnter(Collider other)
     {
-        controller.enabled = false;
+        //controller.enabled = false;
         player.transform.position = teleportTarget.transform.position;
-        controller.enabled = true;
+        //controller.enabled = true;
     }
 }

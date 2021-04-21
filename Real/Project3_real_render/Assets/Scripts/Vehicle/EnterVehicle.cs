@@ -3,16 +3,17 @@ using System.Collections;
 
 public class EnterVehicle : MonoBehaviour
 {
+    //Car Variables
     private bool inVehicle = false;
     VehicleController vehicleScript;
+    SkinnedMeshRenderer playerRender;
     public GameObject guiObj;
     GameObject player;
 
-
+    //Initialize Car
     void Start()
     {
         vehicleScript = GetComponent<VehicleController>();
-        player = GameObject.FindWithTag("Player");
         guiObj.SetActive(false);
         vehicleScript.enabled = false;
     }
@@ -26,9 +27,13 @@ public class EnterVehicle : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 guiObj.SetActive(false);
-                player.transform.parent = gameObject.transform;
+                player.transform.parent = other.gameObject.transform;
                 vehicleScript.enabled = true;
+
+                //Disable Character
+                playerRender = GetComponentInChildren(typeof(SkinnedMeshRenderer), true) as SkinnedMeshRenderer;
                 player.SetActive(false);
+                playerRender.enabled = false;
                 inVehicle = true;
             }
         }
@@ -40,14 +45,20 @@ public class EnterVehicle : MonoBehaviour
             guiObj.SetActive(false);
         }
     }
+
     void Update()
     {
-        if (inVehicle == true && Input.GetKey(KeyCode.F))
+        //Find Player
+        player = GameObject.FindWithTag("Player");
+
+        //Exit Vehicle
+        //You cannot
+        /*if (inVehicle == true && Input.GetKey(KeyCode.F))
         {
             vehicleScript.enabled = false;
             player.SetActive(true);
             player.transform.parent = null;
             inVehicle = false;
-        }
+        }*/
     }
 }
