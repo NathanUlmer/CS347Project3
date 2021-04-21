@@ -20,10 +20,48 @@ public bool isRunning, isLongSwing, isShortSwing, isIdle;
     void Update()
     {
 
-        //running animation
+
+        //Short Sword Swing Animation
+        if(Input.GetMouseButtonDown(0))
+        {
+            anim.CrossFade("Short Sword Swing", .1f);
+        }
+        if(Input.GetMouseButton(0))
+        {
+            isShortSwing = true;
+            anim.SetBool("isShortSwing", true);
+            anim.SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            isShortSwing = false;
+            anim.SetBool("isShortSwing", false);
+        }
+
+        //Long Sword Swing Animation
+        if(Input.GetMouseButtonDown(1))
+        {
+            anim.CrossFade("Long Sword Swing", .1f);
+        }
+
+        if(Input.GetMouseButton(1))
+        {
+            isLongSwing = true;
+            anim.SetBool("IsLongSwing", true);
+            anim.SetBool("IsIdle", false);
+
+        }
+        else
+        {
+            isLongSwing = false;
+            anim.SetBool("IsLongSwing", false);
+        }
+
+                //running animation
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
-            anim.CrossFade("Running", .2f);
+            anim.CrossFade("Running", .1f);
             audsrc.Play();
         }
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
@@ -41,38 +79,6 @@ public bool isRunning, isLongSwing, isShortSwing, isIdle;
             anim.SetBool("IsIdle", true);
             anim.SetBool("isRunning", false);
             audsrc.Stop();
-        }
-
-        //Short Sword Swing Animation
-        if(Input.GetMouseButtonDown(0))
-        {
-            anim.CrossFade("Short Sword Swing", .2f);
-        }
-        if(Input.GetMouseButton(0))
-        {
-            isShortSwing = true;
-            anim.SetBool("isShortSwing", true);
-        }
-        else
-        {
-            isShortSwing = false;
-            anim.SetBool("isShortSwing", false);
-        }
-
-        //Long Sword Swing Animation
-        if(Input.GetMouseButtonDown(1))
-        {
-            anim.CrossFade("Long Sword Swing", .6f);
-        }
-        if(Input.GetMouseButton(1))
-        {
-            isLongSwing = true;
-            anim.SetBool("IsLongSwing", true);
-        }
-        else
-        {
-            isLongSwing = false;
-            anim.SetBool("IsLongSwing", false);
         }
     }
 }
