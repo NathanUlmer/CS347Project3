@@ -36,6 +36,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  headbone: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -0.5
@@ -66,6 +67,23 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &1277159104541660551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598215696620666559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d419507c9d0437bb6f9ba87cd50d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audsrc: {fileID: 0}
+  isRunning: 0
+  isLongSwing: 0
+  isShortSwing: 0
+  isIdle: 0
 --- !u!114 &5869509931507095919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +212,16 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 2eff99515a6e84b6ab9914048cd0444a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 2eff99515a6e84b6ab9914048cd0444a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d86a893cef0b740c2b128d0bfb3ab00e, type: 2}
+    - target: {fileID: -3548337585052231751, guid: 2eff99515a6e84b6ab9914048cd0444a,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

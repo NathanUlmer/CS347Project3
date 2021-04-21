@@ -36,6 +36,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1335
+  headbone: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -0.5
@@ -194,6 +195,16 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 00243bd86702346a9b115cc529eb50cd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 00243bd86702346a9b115cc529eb50cd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a6b513b713ea4e45ae02059f4807f3b, type: 2}
+    - target: {fileID: -3548337585052231751, guid: 00243bd86702346a9b115cc529eb50cd,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

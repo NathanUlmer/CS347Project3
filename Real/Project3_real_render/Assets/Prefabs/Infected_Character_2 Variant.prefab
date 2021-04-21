@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2532679833346760979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544290880670115744}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &544290880670115744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532679833346760979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.36438847, y: -21.1, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3839038061876252580}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1424746096549849257
 CharacterController:
   m_ObjectHideFlags: 0
@@ -40,6 +70,23 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &-1068941412205655316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224152067294395831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d419507c9d0437bb6f9ba87cd50d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audsrc: {fileID: 0}
+  isRunning: 0
+  isLongSwing: 0
+  isShortSwing: 0
+  isIdle: 0
 --- !u!114 &198455103919063090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +120,23 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &872932306168381284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224152067294395831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d419507c9d0437bb6f9ba87cd50d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audsrc: {fileID: 0}
+  isRunning: 0
+  isLongSwing: 0
+  isShortSwing: 0
+  isIdle: 0
 --- !u!114 &5029846980595957681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +155,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1335
+  headbone: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -0.5
@@ -99,36 +164,6 @@ MonoBehaviour:
   isGrounded: 0
   isFloating: 0
   isJumping: 0
---- !u!1 &2532679833346760979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 544290880670115744}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &544290880670115744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2532679833346760979}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36438847, y: -21.1, z: -0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3839038061876252580}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8087818454239749310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +229,16 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 598d1ffdb26cb4794a6e3c46da3cf550,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 598d1ffdb26cb4794a6e3c46da3cf550,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d86a893cef0b740c2b128d0bfb3ab00e, type: 2}
+    - target: {fileID: -3548337585052231751, guid: 598d1ffdb26cb4794a6e3c46da3cf550,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

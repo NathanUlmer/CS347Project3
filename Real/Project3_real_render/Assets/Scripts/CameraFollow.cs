@@ -22,7 +22,8 @@ public class CameraFollow : NetworkBehaviour
     {
         if(playerTransform !=null)
         {
-            transform.position = playerTransform.position + new Vector3(0, headOffset, depth);
+            //transform.position = playerTransform.position + new Vector3(0, headOffset, depth);
+            transform.position = playerTransform.position + new Vector3(depth * Mathf.Sin(playerTransform.eulerAngles.y * Mathf.PI/180), headOffset, depth*Mathf.Cos(playerTransform.eulerAngles.y * Mathf.PI / 180));
             transform.rotation = playerTransform.rotation;
 
             float temp;

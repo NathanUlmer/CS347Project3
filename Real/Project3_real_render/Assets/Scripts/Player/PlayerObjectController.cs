@@ -8,6 +8,7 @@ public class PlayerObjectController : NetworkBehaviour
     public Camera cam;
     public Transform groundCheck;
     public LayerMask groundMask;
+    public Transform headbone;
 
     //Public variables
     public float speed = 6f;
@@ -53,7 +54,7 @@ public class PlayerObjectController : NetworkBehaviour
             // transform.eulerAngles = new Vector3(0, yaw, 0);
             camDir = cam.transform.eulerAngles.y;
             serverUpdate();
-            tf.setTarget(this.transform);
+            tf.setTarget(headbone);
 
         }
     }
