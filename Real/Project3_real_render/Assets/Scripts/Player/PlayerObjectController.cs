@@ -118,7 +118,7 @@ public class PlayerObjectController : NetworkBehaviour
             else if (isGrounded) isJumping = false;
 
             //Debug Ragdoll
-            if (Input.GetButtonDown("G"))
+            if (Input.GetKeyDown("g"))
             {
                 ragdoll.die();
             }
