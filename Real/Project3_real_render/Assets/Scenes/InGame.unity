@@ -1462,7 +1462,6 @@ GameObject:
   - component: {fileID: 717798059}
   - component: {fileID: 717798058}
   - component: {fileID: 717798062}
-  - component: {fileID: 717798063}
   m_Layer: 9
   m_Name: Portal
   m_TagString: Untagged
@@ -1606,20 +1605,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &717798063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717798057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14482ad6b179a6c469407f7cff4cbc97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
 --- !u!4 &757623432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6523521779540669472, guid: 84227dbdce0a6434a9b9693b75b2271f,
@@ -2876,7 +2861,6 @@ GameObject:
   - component: {fileID: 1358829214}
   - component: {fileID: 1358829213}
   - component: {fileID: 1358829212}
-  - component: {fileID: 1358829216}
   m_Layer: 9
   m_Name: Portal Left
   m_TagString: Untagged
@@ -3018,20 +3002,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358829210}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1358829216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358829210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14482ad6b179a6c469407f7cff4cbc97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
 --- !u!1 &1428590425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,7 +3107,6 @@ GameObject:
   - component: {fileID: 1434250123}
   - component: {fileID: 1434250122}
   - component: {fileID: 1434250121}
-  - component: {fileID: 1434250125}
   m_Layer: 9
   m_Name: Portal Right
   m_TagString: Untagged
@@ -3279,20 +3248,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434250119}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1434250125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434250119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14482ad6b179a6c469407f7cff4cbc97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
 --- !u!1 &1674821864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
+  player: {fileID: 1769067726}
 --- !u!114 &1674821867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,7 +3310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
+  player: {fileID: 1769067726}
 --- !u!114 &1674821868
 MonoBehaviour:
   m_ObjectHideFlags: 0
