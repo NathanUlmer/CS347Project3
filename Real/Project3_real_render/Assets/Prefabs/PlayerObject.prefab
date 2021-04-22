@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8691203932296848855}
   - component: {fileID: 3187720071285138744}
   - component: {fileID: -813858578085331775}
+  - component: {fileID: -5519530901477294770}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -79,24 +80,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PPrefab: {fileID: 8740986420252436073, guid: fa69e7db53efea2448412fe36d4a3999, type: 3}
-  PPrefabs:
-  - {fileID: 6993329513267151516, guid: 4f19dd3cc18ec664e98d294a2610f0c4, type: 3}
-  - {fileID: 1774851983728419914, guid: 7e6181baac43f2b4cafc7dfcaafdbe5f, type: 3}
-  - {fileID: 2454892647854847262, guid: 1e58fdbb05ad8b44782e04e5492bd72e, type: 3}
-  infectedPPrefabs:
-  - {fileID: 8740986420252436073, guid: fa69e7db53efea2448412fe36d4a3999, type: 3}
-  - {fileID: 224152067294395831, guid: 1e3de7a0bb571c649a7bfab953d3a4fa, type: 3}
-  - {fileID: 1598215696620666559, guid: 3d2078f4ac1a23543b9578b94a96ae0e, type: 3}
   movementSpeed: 10
   disableOnLoad: []
-  playerSpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  infectedSpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   sm: {fileID: 8756683180741193646, guid: 588ffe78c542e6b4f977199818ae7f92, type: 3}
   ls: {fileID: 0}
   playerID: 0
@@ -113,3 +98,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowLobbyGUI: 1
+--- !u!114 &-5519530901477294770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4238800174725128986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc83873355c31642882ba740ff0298f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PPrefabs:
+  - {fileID: 6993329513267151516, guid: 4f19dd3cc18ec664e98d294a2610f0c4, type: 3}
+  - {fileID: 1774851983728419914, guid: 7e6181baac43f2b4cafc7dfcaafdbe5f, type: 3}
+  - {fileID: 2454892647854847262, guid: 1e58fdbb05ad8b44782e04e5492bd72e, type: 3}
+  infectedPPrefabs:
+  - {fileID: 8740986420252436073, guid: fa69e7db53efea2448412fe36d4a3999, type: 3}
+  - {fileID: 224152067294395831, guid: 1e3de7a0bb571c649a7bfab953d3a4fa, type: 3}
+  - {fileID: 1598215696620666559, guid: 3d2078f4ac1a23543b9578b94a96ae0e, type: 3}
+  playerSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  infectedSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

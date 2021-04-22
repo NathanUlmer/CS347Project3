@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+
+//Author: Nathan, Matt, Marshall
+// Description:
+//   This class manages all of the random properties in our game
+//   You should modify these properites rather than the properties in other scripts
+//   This class should be added to any game objects that require randomness.
 public class PlayerController : NetworkBehaviour
 {
     public GameObject PPrefab;
-    public GameObject[] PPrefabs;
-    public GameObject[] infectedPPrefabs;
+
     public float movementSpeed;
     public Behaviour[] disableOnLoad;
 
-    public Transform[] playerSpawnPoints;
-    public Transform[] infectedSpawnPoints;
-    
+
+    MyRandomUtils Rutil;
 
     NetworkLobbyManager lm;
     public ServerManager sm;
@@ -28,10 +32,11 @@ public class PlayerController : NetworkBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Rutil = GetComponent<MyRandomUtils>();
 
         lm = GameObject.Find("NetworkManager").GetComponent<NetworkLobbyManager>();
         ls = GameObject.Find("ServerStateManager").GetComponent<LobbyScript>();
@@ -175,19 +180,16 @@ public class PlayerController : NetworkBehaviour
         if (ls.infectedPlayerId == playerID)
         {
             Debug.Log("Spawn Player " + playerID.ToString() + " You are Infected");
-            ridx = (int)Mathf.Floor(UnityEngine.Random.value * infectedSpawnPoints.Length);
-            position = infectedSpawnPoints[ridx].position;
-            ridx = (int) Mathf.Floor(UnityEngine.Random.value * infectedPPrefabs.Length);
-            PPrefab = infectedPPrefabs[ridx];
+            position = Rutil.GetSpawnPosition(true);
+            PPrefab = Rutil.GetSpawnGameObject(true);
         }
         else
         {
             Debug.Log("Spawn Player " + playerID.ToString() + " You are a Halo");
             // Create Player object on server and sets position
-            ridx = (int)Mathf.Floor(UnityEngine.Random.value * playerSpawnPoints.Length);
-            position = playerSpawnPoints[ridx].position;
-            ridx = (int)Mathf.Floor(UnityEngine.Random.value * PPrefabs.Length);
-            PPrefab = PPrefabs[ridx];
+            position = Rutil.GetSpawnPosition(false);
+            PPrefab = Rutil.GetSpawnGameObject(false);
+
         }
 
        
