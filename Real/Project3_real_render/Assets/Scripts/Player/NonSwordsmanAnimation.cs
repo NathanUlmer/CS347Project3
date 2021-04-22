@@ -53,9 +53,6 @@ public class NonSwordsmanAnimation : MonoBehaviour
             anim.SetBool("isDriver", true);
             anim.CrossFade("isDriver", .1f);
         }
-        else
-        {
-            inVehicle = false;
-        }
+
     }
 }

@@ -16,6 +16,9 @@ public class LongCastAbility : MonoBehaviour
             vehicle.TakeDamage(damage);
         }
         //Destroy Slash On Collision
-        Destroy(this.gameObject);
+        if (this.tag != "Swordsman")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

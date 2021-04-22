@@ -1258,6 +1258,7 @@ GameObject:
   - component: {fileID: 1277159104541660551}
   - component: {fileID: 5869509931507095919}
   - component: {fileID: 8515516197340511024}
+  - component: {fileID: -9201774006113835692}
   m_Layer: 0
   m_Name: Infected_Character_3 Variant
   m_TagString: Swordsman
@@ -1542,6 +1543,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3ec7d6c5fbc4fbc9125b2eecefdbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-9201774006113835692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598215696620666559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18e15ed5495c434d969378156376a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 5692368149169922518}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!1 &1626902259957356815
 GameObject:
   m_ObjectHideFlags: 0
