@@ -3296,7 +3296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
+  player: {fileID: 1769067726}
 --- !u!114 &1674821867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3310,7 +3310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportTarget: {fileID: 467759803}
-  player: {fileID: 0}
+  player: {fileID: 1769067726}
 --- !u!114 &1674821868
 MonoBehaviour:
   m_ObjectHideFlags: 0
