@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 public class PlayerController : NetworkBehaviour
 {
     public GameObject PPrefab;
@@ -9,37 +10,84 @@ public class PlayerController : NetworkBehaviour
     public GameObject[] infectedPPrefabs;
     public float movementSpeed;
     public Behaviour[] disableOnLoad;
-    private int playerID;
+
+    public Transform[] playerSpawnPoints;
+    public Transform[] infectedSpawnPoints;
+    
 
     NetworkLobbyManager lm;
     public ServerManager sm;
+    public LobbyScript ls;
+
+    Scene currentScene;
+    GameObject myPlayerUnit;
+
+
+    [SyncVar(hook = "OnIDSet")]
+    public int playerID;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(isLocalPlayer == false)
-        {
-            // this object is not mine
-            for(int i = 0; i< disableOnLoad.Length;i++)
-            {
-                disableOnLoad[i].enabled = false;
-            }
-            return;
-        }
-        Debug.Log("PlayerObject Loading");
-        movementSpeed = 2;
+
+
         lm = GameObject.Find("NetworkManager").GetComponent<NetworkLobbyManager>();
-        //sm = GameObject.Find("ServerStateManager").GetComponent<ServerManager>();
-        playerID = numPlayersInLobby();
-        Debug.Log("I am Player #:" + playerID.ToString());
-        CmdSpawnMyPlayer();
+        ls = GameObject.Find("ServerStateManager").GetComponent<LobbyScript>();
+
+
+        if (isServer)
+        {
+            
+
+
+
+        }
+
+        if (isLocalPlayer)
+        {
+
+
+
+            Debug.Log("PlayerObject Loading");
+            movementSpeed = 2;
+
+            //sm = GameObject.Find("ServerStateManager").GetComponent<ServerManager>();
+
+
+            CmdChangePlayerID();
+            CmdIncrementPlayers();
+
+            Debug.Log("I am Player #:" + playerID.ToString());
+
+        }
+
+    }
+
+    void OnIDSet(int ID)
+    {
+        playerID = ID;
+    }
+
+    [Command]
+    void CmdChangePlayerID()
+    {
+        playerID = ls.totalPlayers;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+
+
+        currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == "InGame" && myPlayerUnit == null && isLocalPlayer && ls.infectedPlayerId !=-100f)
+        {
+            Debug.Log(currentScene.name);
+            CmdSpawnMyPlayer();
+        }
         //if (isLocalPlayer)
         //{
         //    Vector3 movement = Vector3.zero;
@@ -74,8 +122,11 @@ public class PlayerController : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Local Player Here: " + playerID.ToString());
-        CmdUpdate();
+        if (isLocalPlayer)
+        {
+            Debug.Log("Local Player Here: " + playerID.ToString());
+           // CmdUpdate();
+        }
 
         //if(Input.GetKeyDown(KeyCode.Space))
         //{
@@ -84,15 +135,17 @@ public class PlayerController : NetworkBehaviour
         
     }
 
-    GameObject myPlayerUnit;
-
+  
     // Ask server to create player object
     [Command]
     void CmdSpawnMyPlayer()
     {
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name != "InGame") return;
+
         if (connectionToClient.isReady)
         {
-            Spawn();
+            if(myPlayerUnit == null) Spawn();
         }
         else
         {
@@ -106,27 +159,36 @@ public class PlayerController : NetworkBehaviour
         {
             yield return new WaitForSeconds(0.25f);
         }
-        Spawn();
+        if (myPlayerUnit == null)
+        {
+            Spawn();
+        }
     }
 
     void Spawn()
     {
         Debug.Log("SPAWN REACHED");
-        Debug.Log("Infected Player #: " + sm.infectedPlayerId.ToString());
+        Debug.Log("Spawn Infected Player #: " + ls.infectedPlayerId.ToString());
         // You are Infected
         Vector3 position;
-        if (sm.infectedPlayerId == playerControllerId)
+        int ridx;
+        if (ls.infectedPlayerId == playerID)
         {
-            Debug.Log("Player " + playerID.ToString() + " You are Infected");
-            position = new Vector3(Random.Range(-8.0F, 8.0F), 80, -33);
-            PPrefab = infectedPPrefabs[0];
+            Debug.Log("Spawn Player " + playerID.ToString() + " You are Infected");
+            ridx = (int)Mathf.Floor(UnityEngine.Random.value * infectedSpawnPoints.Length);
+            position = infectedSpawnPoints[ridx].position;
+            
+            ridx = (int) Mathf.Floor(UnityEngine.Random.value * infectedPPrefabs.Length);
+            PPrefab = infectedPPrefabs[ridx];
         }
         else
         {
-            Debug.Log("Player " + playerID.ToString() + " You are a Halo");
+            Debug.Log("Spawn Player " + playerID.ToString() + " You are a Halo");
             // Create Player object on server and sets position
-            position = new Vector3(Random.Range(-8.0F, 8.0F), 30, -33);
-            PPrefab = PPrefabs[0];
+            ridx = (int)Mathf.Floor(UnityEngine.Random.value * playerSpawnPoints.Length);
+            position = playerSpawnPoints[ridx].position;
+            ridx = (int)Mathf.Floor(UnityEngine.Random.value * PPrefabs.Length);
+            PPrefab = PPrefabs[ridx];
         }
 
        
@@ -157,13 +219,33 @@ public class PlayerController : NetworkBehaviour
     }
 
 
-    int numPlayersInLobby()
+  
+
+
+   
+
+    //IEnumerator StartRPCChooseInfectedCall()
+    //{
+    //    yield return new WaitForSeconds(0.01f);
+    //    RpcChooseInfected();
+    //}
+    //int numPlayersInLobby()
+    //{
+    //    int count = 0;
+    //    for (int i = 0; i < lm.lobbySlots.Length; i++)
+    //    {
+    //        if (lm.lobbySlots[i] != null) count++;
+    //    }
+    //    return count;
+    //}
+
+    [Command]
+    void CmdIncrementPlayers()
     {
-        int count = 0;
-        for (int i = 0; i < lm.lobbySlots.Length; i++)
-        {
-            if (lm.lobbySlots[i] != null) count++;
-        }
-        return count;
+        ls.totalPlayers += 1;
+
     }
+
+
+
 }

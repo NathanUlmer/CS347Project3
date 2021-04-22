@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8863958950971028359}
   - component: {fileID: 184476896143581112}
   - component: {fileID: 1502738225776463075}
-  - component: {fileID: 8756683180741193646}
   m_Layer: 0
   m_Name: Lobby Prefab
   m_TagString: Untagged
@@ -79,16 +78,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowLobbyGUI: 1
---- !u!114 &8756683180741193646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5671601681971515085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed07eb751e70cf449614dbce815b783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infectedPlayerId: 0

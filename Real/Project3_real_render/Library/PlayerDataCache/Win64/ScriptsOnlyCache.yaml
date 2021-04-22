@@ -7,7 +7,6 @@ ScriptsOnlyBuild:
     - LobbyScript
     - PlayerController
     - PlayerObjectController
-    - ServerManager
     - SwordsmanAnimation
     - TeleporterController
     - VehicleCamera
@@ -41,6 +40,7 @@ ScriptsOnlyBuild:
     com.unity.multiplayer-hlapi.Editor.dll:
     - UnityEditor.NetworkBehaviourInspector
     - UnityEditor.NetworkIdentityEditor
+    - UnityEditor.NetworkTransformEditor
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
@@ -88,8 +88,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10190}
     - Class: 114
       Script: {instanceID: 10208}
-    - Class: 114
-      Script: {instanceID: 10346}
     - Class: 114
       Script: {instanceID: 10548}
     - Class: 114
@@ -170,8 +168,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11420}
     - Class: 114
-      Script: {instanceID: 11696}
-    - Class: 114
       Script: {instanceID: 12330}
     - Class: 114
       Script: {instanceID: 12740}
@@ -212,7 +208,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: c1e153f912e8c5f08ff7708babade1e4
+      Hash: 2a023eada6c74939ad84218827447786
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VehicleController
@@ -566,7 +562,7 @@ ScriptsOnlyBuild:
     className: LightweightRenderPipelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 92ff1215d219fd00514aab46a284cfd6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LobbyScript
@@ -626,7 +622,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: a483fdab598bb497b4f0cf8fcf191f0a
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ServerManager
@@ -962,7 +958,7 @@ ScriptsOnlyBuild:
     className: Light2D
   - hash:
       serializedVersion: 2
-      Hash: 97a58bf70ad9f209928f13c3000bb2ec
+      Hash: bb695eef43eeb4dc73928255b0cde580
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

@@ -14,7 +14,7 @@ public class CameraFollow : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        Debug.Log("Reached Camera");
     }
 
     // Update is called once per frame
@@ -59,6 +59,7 @@ public class CameraFollow : NetworkBehaviour
 
     public void setTarget(Transform target)
     {
+        Debug.Log("Set Camera Target");
         playerTransform = target;
     }
 }
