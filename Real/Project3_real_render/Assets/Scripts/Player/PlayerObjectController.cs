@@ -16,6 +16,10 @@ public class PlayerObjectController : NetworkBehaviour
     public float gravity = -0.5f;
     public float jumpHeight = 0.1f;
     public float groundDis = 0.05f;
+
+    public int maxHealth;
+    public int health;
+
     public GameObject slash;
 
     float yaw = 0f;
@@ -158,6 +162,7 @@ public class PlayerObjectController : NetworkBehaviour
         ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 50;
         ability.transform.rotation = cam.transform.rotation;
         yield return new WaitForSeconds(3f);
+
         quickCastAbilityOffCoolDown = true;
         yield return new WaitForSeconds(4f);
         Destroy(ability, 1.0f);

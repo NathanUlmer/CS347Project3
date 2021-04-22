@@ -232,8 +232,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.22
   m_SuspensionSpring:
-    spring: 0
-    damper: 0
+    spring: 0.1
+    damper: 0.1
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 2985284789130450342}
   m_Layer: 0
   m_Name: vehicle Variant
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,6 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd22f100c8769246896ad81be13ec5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  health: 0
   offset: {x: 0, y: 0, z: 0}
   cameracontrol: {fileID: 0}
   cam: {fileID: 0}
@@ -935,8 +937,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.22
   m_SuspensionSpring:
-    spring: 0
-    damper: 0
+    spring: 0.1
+    damper: 0.1
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -1074,8 +1076,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.22
   m_SuspensionSpring:
-    spring: 0
-    damper: 0
+    spring: 0.1
+    damper: 0.1
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -1448,8 +1450,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.22
   m_SuspensionSpring:
-    spring: 0
-    damper: 0
+    spring: 0.1
+    damper: 0.1
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0

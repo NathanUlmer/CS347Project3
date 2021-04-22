@@ -14,6 +14,10 @@ public class VehicleController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
+    //Health Variables
+    public int maxHealth = 10;
+    public int health;
+
     //Camera Variables
     [SerializeField] private Vector3 offset;
 
@@ -39,7 +43,7 @@ public class VehicleController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         GetInput();
         HandleMotor();
@@ -47,8 +51,9 @@ public class VehicleController : MonoBehaviour
         //UpdateWheels();
     }
 
-    private void Start()
+    void Start()
     {
+        health = maxHealth;
         // yaw += Input.GetAxis("Mouse X") * Time.deltaTime * 100.0f;
         // transform.eulerAngles = new Vector3(0, yaw, 0);
 
@@ -62,7 +67,7 @@ public class VehicleController : MonoBehaviour
     }
 
     //Camera Update
-    private void LateUpdate()
+    void LateUpdate()
     {
         //Get Camera
         if (cam == null)
@@ -121,5 +126,14 @@ public class VehicleController : MonoBehaviour
 ;       wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

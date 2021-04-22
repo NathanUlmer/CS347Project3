@@ -7,7 +7,6 @@ public class TeleporterController : MonoBehaviour
     //Set teleport target and location
     CharacterController controller;
     public Transform teleportTarget;
-    public GameObject player;
 
     private void Start()
     {
@@ -18,7 +17,7 @@ public class TeleporterController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //controller.enabled = false;
-        player.transform.position = teleportTarget.transform.position;
+        other.transform.position = teleportTarget.transform.position;
         //controller.enabled = true;
     }
 }
