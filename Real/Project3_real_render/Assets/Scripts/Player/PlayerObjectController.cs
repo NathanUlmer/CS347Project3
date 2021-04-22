@@ -57,6 +57,7 @@ public class PlayerObjectController : NetworkBehaviour
             {
                 cam = Camera.main;
                 tf = cam.GetComponent<CameraFollow>();
+                return;
             }
             Debug.Log(cam);
             // yaw += Input.GetAxis("Mouse X") * Time.deltaTime * 100.0f;

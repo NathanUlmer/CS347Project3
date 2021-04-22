@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &2116704143729970492
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454892647854847262}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!143 &568958938713145496
 CharacterController:
   m_ObjectHideFlags: 0
@@ -145,14 +161,16 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1335
-  headbone: {fileID: 0}
+  headbone: {fileID: 451274224814891392}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -0.5
   jumpHeight: 0.1
   groundDis: 0.2
-  quickCastAbilityObject: {fileID: 0}
-  longCastAbilityObject: {fileID: 0}
+  quickCastAbilityObject: {fileID: 1964535781089396705, guid: aa34c71dbe00d4158a6810a2da11fc42,
+    type: 3}
+  longCastAbilityObject: {fileID: 7488657022177578343, guid: 881dd4849a08f4d63a056ce433619a96,
+    type: 3}
   isGrounded: 0
   isFloating: 0
   isJumping: 0
@@ -211,22 +229,6 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!54 &2116704143729970492
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2454892647854847262}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8455702981105156530
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +352,12 @@ GameObject:
 --- !u!4 &1462225136228615949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 00243bd86702346a9b115cc529eb50cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5850293345243655191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &451274224814891392 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6301474076069580183, guid: 00243bd86702346a9b115cc529eb50cd,
     type: 3}
   m_PrefabInstance: {fileID: 5850293345243655191}
   m_PrefabAsset: {fileID: 0}
