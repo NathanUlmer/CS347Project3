@@ -119,12 +119,12 @@ MonoBehaviour:
   - {fileID: 224152067294395831, guid: 1e3de7a0bb571c649a7bfab953d3a4fa, type: 3}
   - {fileID: 1598215696620666559, guid: 3d2078f4ac1a23543b9578b94a96ae0e, type: 3}
   playerSpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4827333913617501244, guid: 5051e27558c629d41827e59850f302df, type: 3}
+  - {fileID: 495972470270213086, guid: 30f699074a118f041ae38b7b0ae1ec38, type: 3}
+  - {fileID: 3132708731178304831, guid: c751fcfc0b549a346806f1c560f55627, type: 3}
+  - {fileID: 4044336589820905046, guid: b1071bb6af6c3094e9ef63e0ca6c1fb4, type: 3}
   infectedSpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8743608726499350606, guid: eeb736743538b2c46aa83a1edbf9994d, type: 3}
+  - {fileID: 6843738988371182349, guid: af4a8441b13e4f24dac30feb0b423428, type: 3}
+  - {fileID: 6843738988371182349, guid: af4a8441b13e4f24dac30feb0b423428, type: 3}
+  - {fileID: 4353192785381397751, guid: db552a69396a9054a858eee70ad8875f, type: 3}
