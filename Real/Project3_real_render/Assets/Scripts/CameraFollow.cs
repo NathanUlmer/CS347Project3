@@ -5,12 +5,12 @@ using UnityEngine.Networking;
 
 public class CameraFollow : NetworkBehaviour
 {
-
     public Transform playerTransform;
     public float depth = 0f;
     public float headOffset = 1f;
     float x=0f;
     float z=0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +30,9 @@ public class CameraFollow : NetworkBehaviour
             temp = -Input.GetAxis("Mouse Y") * Time.deltaTime * 100.0f;
             z += temp;
 
-
             transform.eulerAngles += new Vector3(z, 0, 0);
             float minAngle =360f-60f;
             float maxAngle = 50f;
-
 
             if (transform.eulerAngles.x <= minAngle && transform.eulerAngles.x >= 180)
             {
@@ -49,14 +47,10 @@ public class CameraFollow : NetworkBehaviour
                 transform.eulerAngles = new Vector3(maxAngle, transform.eulerAngles.y, transform.eulerAngles.z);
                 z -= temp;
             }
-
-
-
-
-            //transform.Translate(0, 0, z);
         }
     }
 
+    //Set the Camera Target
     public void setTarget(Transform target)
     {
         Debug.Log("Set Camera Target");

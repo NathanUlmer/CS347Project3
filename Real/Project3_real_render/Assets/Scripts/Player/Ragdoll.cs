@@ -13,6 +13,7 @@ public class Ragdoll : MonoBehaviour
         GetComponent<PlayerObjectController>().enabled = true;
     }
 
+    //Ragdoll On Death
     public void die()
     {
         GetComponent<SwordsmanAnimation>().enabled = false;
@@ -25,6 +26,7 @@ public class Ragdoll : MonoBehaviour
         }
     }
 
+    //Change Rigid Body State
     void setRigidbodyState(bool state)
     {
         Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -35,6 +37,7 @@ public class Ragdoll : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = !state;
     }
 
+    //Change Collider State
     void setColliderState(bool state)
     {
         Collider[] colliders = GetComponentsInChildren<Collider>();

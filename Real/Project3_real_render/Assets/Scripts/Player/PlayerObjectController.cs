@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.Networking;
 public class PlayerObjectController : NetworkBehaviour
 {
+    //Public Game Objects
     public CharacterController controller;
     public Camera cam;
     public Transform groundCheck;
     public LayerMask groundMask;
     public Transform headbone;
+    Ragdoll ragdoll;
 
-    //Public variables
+    //Public Variables
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     public float gravity = -0.5f;
@@ -19,26 +21,24 @@ public class PlayerObjectController : NetworkBehaviour
     public GameObject quickCastAbilityObject;
     public GameObject longCastAbilityObject;
 
-    float yaw = 0f;
-
-    //Private variables
+    //Inspector Variables
     float turnSmoothVelocity;
     Vector3 velocity;
+    float yaw = 0f;
+    float camDir = 0.0f;
+    CameraFollow tf = null;
     public bool isGrounded;
     public bool isFloating;
     public bool isJumping = false;
-    float camDir = 0.0f;
-    CameraFollow tf = null;
     private bool inVehicle = false;
-
-
     private bool quickCastAbilityOffCoolDown = true;
     private bool longCastAbilityOffCoolDown = true;
     private bool currentlyCasting = false;
-    // Update is called once per frame
+
     // Start is called before the first frame update
     void Start()
     {
+        //Grab Camera Target
         Debug.Log("Reached Player Object Controller");
         transform.localScale = new Vector3(0.1f,0.1f,0.1f);
         if (hasAuthority)
@@ -51,6 +51,7 @@ public class PlayerObjectController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Get Camera for each Seperate Player
         if(hasAuthority)
         {
             if(cam == null)
@@ -65,6 +66,7 @@ public class PlayerObjectController : NetworkBehaviour
             camDir = cam.transform.eulerAngles.y;
             serverUpdate();
 
+            //Vehicle Camera
             if(inVehicle)
             {
                 Transform offset = headbone;
@@ -77,6 +79,7 @@ public class PlayerObjectController : NetworkBehaviour
             }
         }
 
+        //Quick Attack
         if(Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
         {
             quickCastAbilityOffCoolDown = false;
@@ -85,6 +88,7 @@ public class PlayerObjectController : NetworkBehaviour
             StopCoroutine(QuickCastAbility());
         }
 
+        //Long Attack
         if(Input.GetMouseButton(1) && longCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
         {
             longCastAbilityOffCoolDown = false;
@@ -92,16 +96,12 @@ public class PlayerObjectController : NetworkBehaviour
             StartCoroutine(LongCastAbility());
             StopCoroutine(LongCastAbility());
         }
-
     }
 
     public void serverUpdate()
     {
         if (hasAuthority)
         {
-
-
-
             //Check for ground
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDis, groundMask);
             if (isGrounded && velocity.y < 0)
@@ -112,28 +112,30 @@ public class PlayerObjectController : NetworkBehaviour
             //Jump input
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
-
                 isJumping = true;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
             else if (isGrounded) isJumping = false;
 
-            //Gravitational force
+            //Debug Ragdoll
+            if (Input.GetButtonDown("G"))
+            {
+                ragdoll.die();
+            }
 
+            //Gravitational force
             if (!isGrounded)
             {
                 velocity.y += gravity * Time.deltaTime;
-
             }
 
-            controller.Move(velocity);
-
             //Directional movement inputs
+            controller.Move(velocity);
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-            //Directional movement with a third person camera
+            //Directional Movement Independant of Camera
             if (direction.magnitude >= 0.1f)
             {
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camDir;
@@ -142,26 +144,25 @@ public class PlayerObjectController : NetworkBehaviour
 
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
-
             }
-
             yaw += Input.GetAxis("Mouse X") * Time.deltaTime * 100.0f;
             transform.eulerAngles = new Vector3(0, yaw, 0);
-
-
         }
     }
 
-
+    //Enter Vehicle when Collided and Pressing "E"
     void OnTriggerStay(Collider other)
     {
-        if(this.tag == "Player" && other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
+        if (this.tag == "Player" && other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
         {
             inVehicle = true;
         }
         else
+        {
             inVehicle = false;
+        }
 
+        //Swordsman Gets Hit by Car
         if(this.tag == "Swordsman" && other.gameObject.tag == "Vehicle")
         {
             //5 is the vehicle speed that needs to be normalized
@@ -174,7 +175,7 @@ public class PlayerObjectController : NetworkBehaviour
             }
             else
             {
-                //THE Swordsman DIES
+                ragdoll.die();
             }
         }
     }

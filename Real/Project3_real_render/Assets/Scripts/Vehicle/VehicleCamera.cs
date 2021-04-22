@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Unused Script
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
 public class VehicleCamera : MonoBehaviour
 {
     [SerializeField] private Vector3 offset;

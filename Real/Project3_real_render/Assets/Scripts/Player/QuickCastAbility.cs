@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class QuickCastAbility : MonoBehaviour
 {
+    //Ability Damage
     public int damage = 5;
+
+    //Damage Vehicle On Collision
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Vehicle")
+        VehicleController vehicle = other.GetComponent<VehicleController>();
+        if (vehicle != null)
         {
-            VehicleController vehicle = other.GetComponent<VehicleController>();
-            if (vehicle != null)
-            {
-                vehicle.TakeDamage(damage);
-            }
-            Destroy(this.gameObject);
+            vehicle.TakeDamage(damage);
         }
+        //Destroy Slash On Collision
+        Destroy(this.gameObject);
     }
 }

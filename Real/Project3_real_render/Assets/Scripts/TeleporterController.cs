@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class TeleporterController : MonoBehaviour
 {
-    //Set teleport target and location
+    //Set teleport Target and Location
     CharacterController controller;
     public Transform teleportTarget;
 
-    private void Start()
-    {
-        //controller.enabled = true;
-    }
-
-    //Teleport the player when they collide
+    //Teleport Object On Collision
     void OnTriggerEnter(Collider other)
     {
-        //controller.enabled = false;
         other.transform.position = teleportTarget.transform.position;
-        //controller.enabled = true;
     }
 }

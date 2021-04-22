@@ -51,19 +51,10 @@ public class VehicleController : MonoBehaviour
         //UpdateWheels();
     }
 
+    //Create Car at Max Health
     void Start()
     {
         health = maxHealth;
-        // yaw += Input.GetAxis("Mouse X") * Time.deltaTime * 100.0f;
-        // transform.eulerAngles = new Vector3(0, yaw, 0);
-
-        //Transform Camera
-        /*var targetPos = target.TransformPoint(offset);
-        transform.position = Vector3.Lerp(transform.position, targetPos, transSpeed * Time.deltaTime);
-        var direction = target.position - transform.position;
-        var rot = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rot, rotSpeed * Time.deltaTime);*/
-
     }
 
     //Camera Update
@@ -81,6 +72,7 @@ public class VehicleController : MonoBehaviour
         tf.setTarget(camTarget.transform);
     }
 
+    //Handle Car Inputs
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
@@ -88,6 +80,7 @@ public class VehicleController : MonoBehaviour
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
+    //Car Accelleration
     private void HandleMotor()
     {
         frontLeftWheelCollider.motorTorque = -verticalInput * motorForce;
@@ -96,6 +89,7 @@ public class VehicleController : MonoBehaviour
         ApplyBreaking();       
     }
 
+    //Car Breaking
     private void ApplyBreaking()
     {
         frontRightWheelCollider.brakeTorque = currentbreakForce;
@@ -104,6 +98,7 @@ public class VehicleController : MonoBehaviour
         rearRightWheelCollider.brakeTorque = currentbreakForce;
     }
 
+    //Car Steering
     private void HandleSteering()
     {
         currentSteerAngle = maxSteerAngle * horizontalInput;
@@ -111,6 +106,7 @@ public class VehicleController : MonoBehaviour
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
 
+    //Update Wheel Visuals
     private void UpdateWheels()
     {
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
@@ -119,6 +115,7 @@ public class VehicleController : MonoBehaviour
         UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
     }
 
+    //Individual Wheel Update
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         Vector3 pos;
@@ -128,6 +125,7 @@ public class VehicleController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
+    //Damage Function
     public void TakeDamage(int damage)
     {
         health -= damage;

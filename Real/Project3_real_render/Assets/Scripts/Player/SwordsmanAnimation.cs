@@ -18,8 +18,6 @@ public AudioSource audsrc;
     // Update is called once per frame
     void Update()
     {
-
-
         //Short Sword Swing Animation
         if(Input.GetMouseButtonDown(0))
         {
@@ -29,7 +27,6 @@ public AudioSource audsrc;
         {
             anim.SetBool("isShortSwing", true);
             anim.SetBool("IsIdle", false);
-
         }
         else
         {
@@ -41,19 +38,17 @@ public AudioSource audsrc;
         {
             anim.CrossFade("Long Sword Swing", .1f);
         }
-
         if(Input.GetMouseButton(1))
         {
             anim.SetBool("IsLongSwing", true);
             anim.SetBool("IsIdle", false);
-
         }
         else
         {
             anim.SetBool("IsLongSwing", false);
         }
 
-                //running animation
+        //running animation
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             anim.CrossFade("Running", .1f);
@@ -74,5 +69,3 @@ public AudioSource audsrc;
         }
     }
 }
-
-

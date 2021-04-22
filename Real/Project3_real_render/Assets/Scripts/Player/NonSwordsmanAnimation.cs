@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NonSwordsmanAnimation : MonoBehaviour
 {
-private Animator anim;
-public AudioSource audsrc;
-private bool inVehicle;
+    private Animator anim;
+    public AudioSource audsrc;
+    private bool inVehicle;
 
     // Start is called before the first frame update
     void Start()
@@ -44,16 +44,18 @@ private bool inVehicle;
         }
     }
 
-
+    //Enter Vehicle
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
+        if (other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
         {
             inVehicle = true;
             anim.SetBool("isDriver", true);
             anim.CrossFade("isDriver", .1f);
         }
         else
+        {
             inVehicle = false;
+        }
     }
 }
