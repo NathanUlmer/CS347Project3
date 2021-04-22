@@ -13,7 +13,7 @@ public class NonSwordsmanAnimation : MonoBehaviour
     {
         anim = GetComponent <Animator> ();
         audsrc = GetComponent<AudioSource>();
-        anim.SetBool("IsIdle", true);
+        anim.SetBool("isIdle", true);
     }
 
     // Update is called once per frame
@@ -21,6 +21,15 @@ public class NonSwordsmanAnimation : MonoBehaviour
     {
         if(inVehicle == false)
         {
+            if(Input.GetKeyDown(KeyCode.T))
+            {
+                anim.CrossFade("Spawning", .2f);
+            }
+            if(Input.GetKey(KeyCode.T))
+            {
+                anim.SetBool("isSpawning", true);
+            }
+
             if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
             {
 
@@ -34,13 +43,16 @@ public class NonSwordsmanAnimation : MonoBehaviour
                 anim.SetBool("isPassenger", false);
                 anim.SetBool("isIdle", false);
                 anim.SetBool("isGunner", false);
+                anim.SetBool("isSpawning", false);
             }
             else
             {
-                anim.SetBool("IsIdle", true);
+                anim.SetBool("isIdle", true);
                 anim.SetBool("isRunning", false);
                 audsrc.Stop();
             }
+
+
         }
     }
 
