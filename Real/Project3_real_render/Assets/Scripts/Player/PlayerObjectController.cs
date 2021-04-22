@@ -16,11 +16,8 @@ public class PlayerObjectController : NetworkBehaviour
     public float gravity = -0.5f;
     public float jumpHeight = 0.1f;
     public float groundDis = 0.05f;
-
-    public int maxHealth;
-    public int health;
-
-    public GameObject slash;
+    public GameObject quickCastAbilityObject;
+    public GameObject longCastAbilityObject;
 
     float yaw = 0f;
 
@@ -36,6 +33,8 @@ public class PlayerObjectController : NetworkBehaviour
 
 
     private bool quickCastAbilityOffCoolDown = true;
+    private bool longCastAbilityOffCoolDown = true;
+    private bool currentlyCasting = false;
     // Update is called once per frame
     // Start is called before the first frame update
     void Start()
@@ -77,11 +76,20 @@ public class PlayerObjectController : NetworkBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman")
+        if(Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
         {
             quickCastAbilityOffCoolDown = false;
+            currentlyCasting = true;
             StartCoroutine(QuickCastAbility());
             StopCoroutine(QuickCastAbility());
+        }
+
+        if(Input.GetMouseButton(1) && longCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
+        {
+            longCastAbilityOffCoolDown = false;
+            currentlyCasting = true;
+            StartCoroutine(LongCastAbility());
+            StopCoroutine(LongCastAbility());
         }
 
     }
@@ -146,26 +154,57 @@ public class PlayerObjectController : NetworkBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
+        if(this.tag == "Player" && other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
         {
             inVehicle = true;
         }
         else
             inVehicle = false;
+
+        if(this.tag == "Swordsman" && other.gameObject.tag == "Vehicle")
+        {
+            //5 is the vehicle speed that needs to be normalized
+            float numberFromDistribution = Probabilities.X2PDF(1, 5);
+            float randomNumber = Random.value;
+
+            if(randomNumber <= numberFromDistribution)
+            {
+                this.GetComponent<Rigidbody>().velocity = Vector3.Scale(other.gameObject.GetComponent<Rigidbody>().velocity, new Vector3(1.3f, 1.3f, 1.3f));
+            }
+            else
+            {
+                //THE Swordsman DIES
+            }
+        }
     }
 
     IEnumerator QuickCastAbility()
     {
         yield return new WaitForSeconds(.4f);
-        GameObject ability = Instantiate(slash) as GameObject;
+        GameObject ability = Instantiate(quickCastAbilityObject) as GameObject;
         ability.transform.position = this.transform.position;
         ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 50;
         ability.transform.rotation = cam.transform.rotation;
-        yield return new WaitForSeconds(3f);
-
+        yield return new WaitForSeconds(.2f);
+        currentlyCasting = false;
+        yield return new WaitForSeconds(2f);
         quickCastAbilityOffCoolDown = true;
         yield return new WaitForSeconds(4f);
         Destroy(ability, 1.0f);
     }
- 
+
+    IEnumerator LongCastAbility()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject ability = Instantiate(longCastAbilityObject) as GameObject;
+        ability.transform.position = this.transform.position;
+        ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 70;
+        ability.transform.rotation = cam.transform.rotation;
+        yield return new WaitForSeconds(.5f);
+        currentlyCasting = false;
+        yield return new WaitForSeconds(3f);
+        quickCastAbilityOffCoolDown = true;
+        yield return new WaitForSeconds(4f);
+        Destroy(ability, 1.0f);
+    } 
 }
