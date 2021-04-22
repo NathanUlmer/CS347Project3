@@ -362,7 +362,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2414070563949965907}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -370,6 +370,7 @@ Transform:
   - {fileID: 8256222770219912239}
   - {fileID: 296563377112165299}
   - {fileID: 9143209235174830408}
+  - {fileID: 2228055738368525093}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -473,6 +474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd22f100c8769246896ad81be13ec5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  cameracontrol: {fileID: 0}
+  cam: {fileID: 0}
+  camTarget: {fileID: 4979029947079870732}
   motorForce: 100000
   breakForce: 5000
   maxSteerAngle: 30
@@ -497,10 +502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiObj: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
-  transSpeed: 0
-  rotSpeed: 0
 --- !u!114 &2985284789130450342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +674,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4979029947079870732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2228055738368525093}
+  m_Layer: 0
+  m_Name: Cam Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2228055738368525093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979029947079870732}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 4.5, z: 6.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1719207083533926464}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5375847885109964507
 GameObject:
   m_ObjectHideFlags: 0

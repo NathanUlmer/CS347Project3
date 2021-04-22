@@ -15,17 +15,16 @@ public class VehicleController : MonoBehaviour
     private bool isBreaking;
 
     //Camera Variables
-    /*[SerializeField] private Vector3 offset;
-    [SerializeField] private Transform target;
-    [SerializeField] private float transSpeed;
-    [SerializeField] private float rotSpeed;*/
+    [SerializeField] private Vector3 offset;
 
     //Camera Controls
     public CameraFollow cameracontrol;
     public Camera cam;
+    public GameObject camTarget;
     CameraFollow tf = null;
     float camDir = 0.0f;
 
+    //Car Controllers
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
@@ -72,11 +71,9 @@ public class VehicleController : MonoBehaviour
             tf = cam.GetComponent<CameraFollow>();
         }
         Debug.Log(cam);
-        camDir = cam.transform.eulerAngles.y;
+        //camDir = cam.transform.eulerAngles.y;
 
-        //Transform notTarget = this.GetComponent<Transform>();
-        //notTarget.position += new Vector3(0f, 0f, 0f);
-        tf.setTarget(transform);
+        tf.setTarget(camTarget.transform);
     }
 
     private void GetInput()
