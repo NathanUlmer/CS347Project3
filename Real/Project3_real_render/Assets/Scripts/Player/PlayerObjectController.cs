@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 public class PlayerObjectController : NetworkBehaviour
 {
     public CharacterController controller;
@@ -17,6 +16,8 @@ public class PlayerObjectController : NetworkBehaviour
     public float gravity = -0.5f;
     public float jumpHeight = 0.1f;
     public float groundDis = 0.05f;
+    public GameObject slash;
+
     float yaw = 0f;
 
     //Private variables
@@ -27,6 +28,10 @@ public class PlayerObjectController : NetworkBehaviour
     public bool isJumping = false;
     float camDir = 0.0f;
     CameraFollow tf = null;
+    private bool inVehicle = false;
+
+
+    private bool quickCastAbilityOffCoolDown = true;
     // Update is called once per frame
     // Start is called before the first frame update
     void Start()
@@ -55,9 +60,26 @@ public class PlayerObjectController : NetworkBehaviour
             // transform.eulerAngles = new Vector3(0, yaw, 0);
             camDir = cam.transform.eulerAngles.y;
             serverUpdate();
-            tf.setTarget(headbone);
 
+            if(inVehicle)
+            {
+                Transform offset = headbone;
+                offset.position = new Vector3(headbone.position.x - 10, headbone.position.y + 8, headbone.position.z);
+                tf.setTarget(offset);
+            }
+            else
+            {
+                tf.setTarget(headbone);
+            }
         }
+
+        if(Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman")
+        {
+            quickCastAbilityOffCoolDown = false;
+            StartCoroutine(QuickCastAbility());
+            StopCoroutine(QuickCastAbility());
+        }
+
     }
 
     public void serverUpdate()
@@ -117,5 +139,28 @@ public class PlayerObjectController : NetworkBehaviour
         }
     }
 
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Vehicle" && Input.GetKey(KeyCode.E))
+        {
+            inVehicle = true;
+        }
+        else
+            inVehicle = false;
+    }
+
+    IEnumerator QuickCastAbility()
+    {
+        yield return new WaitForSeconds(.4f);
+        GameObject ability = Instantiate(slash) as GameObject;
+        ability.transform.position = this.transform.position;
+        ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 50;
+        ability.transform.rotation = cam.transform.rotation;
+        yield return new WaitForSeconds(3f);
+        quickCastAbilityOffCoolDown = true;
+        yield return new WaitForSeconds(4f);
+        Destroy(ability, 1.0f);
+    }
  
 }

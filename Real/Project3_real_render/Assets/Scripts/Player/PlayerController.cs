@@ -177,7 +177,6 @@ public class PlayerController : NetworkBehaviour
             Debug.Log("Spawn Player " + playerID.ToString() + " You are Infected");
             ridx = (int)Mathf.Floor(UnityEngine.Random.value * infectedSpawnPoints.Length);
             position = infectedSpawnPoints[ridx].position;
-            
             ridx = (int) Mathf.Floor(UnityEngine.Random.value * infectedPPrefabs.Length);
             PPrefab = infectedPPrefabs[ridx];
         }

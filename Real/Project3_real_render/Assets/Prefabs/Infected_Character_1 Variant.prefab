@@ -5395,7 +5395,7 @@ GameObject:
   - component: {fileID: 7733721641552975825}
   m_Layer: 0
   m_Name: Infected_Character_1 Variant
-  m_TagString: Player
+  m_TagString: Swordsman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5533,6 +5533,7 @@ MonoBehaviour:
   gravity: -0.5
   jumpHeight: 0.1
   groundDis: 0.2
+  slash: {fileID: 1964535781089396705, guid: aa34c71dbe00d4158a6810a2da11fc42, type: 3}
   isGrounded: 0
   isFloating: 0
   isJumping: 0
