@@ -29,8 +29,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -42,7 +44,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+    com.unity.multiplayer-hlapi.Editor.dll:
+    - UnityEditor.NetworkAnimatorEditor
+    - UnityEditor.NetworkBehaviourInspector
+    - UnityEditor.NetworkIdentityEditor
+    - UnityEditor.NetworkTransformEditor
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkAnimator
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkLobbyManager
@@ -198,6 +206,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12756}
     - Class: 114
       Script: {instanceID: 12826}
+    - Class: 114
+      Script: {instanceID: 13140}
     - Class: 114
       Script: {instanceID: 13372}
     - Class: 114

@@ -6183,7 +6183,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 33
   m_Radius: 4.75
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -6264,9 +6264,9 @@ MonoBehaviour:
   headbone: {fileID: 6709378871089853175}
   speed: 6
   turnSmoothTime: 0.1
-  gravity: -0.5
-  jumpHeight: 0.1
-  groundDis: 0.2
+  gravity: -8
+  jumpHeight: 2
+  groundDis: 0.3
   quickCastAbilityObject: {fileID: 1964535781089396705, guid: aa34c71dbe00d4158a6810a2da11fc42,
     type: 3}
   longCastAbilityObject: {fileID: 7488657022177578343, guid: 881dd4849a08f4d63a056ce433619a96,

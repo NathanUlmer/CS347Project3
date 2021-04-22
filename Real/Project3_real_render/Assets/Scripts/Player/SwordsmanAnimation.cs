@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class SwordsmanAnimation : MonoBehaviour
+public class SwordsmanAnimation : NetworkBehaviour
 {
 private Animator anim;
 public AudioSource audsrc;
@@ -10,6 +11,7 @@ public AudioSource audsrc;
     // Start is called before the first frame update
     void Start()
     {
+        if (!isLocalPlayer) return;
         anim = GetComponent <Animator> ();
         audsrc = GetComponent<AudioSource>();
         anim.SetBool("IsIdle", true);
@@ -18,7 +20,11 @@ public AudioSource audsrc;
     // Update is called once per frame
     void Update()
     {
-        if()
+        if (!isLocalPlayer) return;
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            anim.CrossFade("Spawn", 0.2f);
+        }
         if(Input.GetKey(KeyCode.T))
         {
             anim.SetBool("IsIdle", false);

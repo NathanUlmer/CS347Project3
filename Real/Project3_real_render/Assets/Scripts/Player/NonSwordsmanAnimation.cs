@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class NonSwordsmanAnimation : MonoBehaviour
+using UnityEngine.Networking;
+public class NonSwordsmanAnimation : NetworkBehaviour
 {
     private Animator anim;
     public AudioSource audsrc;
