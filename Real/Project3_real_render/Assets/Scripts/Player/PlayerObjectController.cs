@@ -78,25 +78,27 @@ public class PlayerObjectController : NetworkBehaviour
             {
                 tf.setTarget(headbone);
             }
+
+            //Quick Attack
+            if (Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
+            {
+                quickCastAbilityOffCoolDown = false;
+                currentlyCasting = true;
+                StartCoroutine(QuickCastAbility());
+                StopCoroutine(QuickCastAbility());
+            }
+
+            //Long Attack
+            if (Input.GetMouseButton(1) && longCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
+            {
+                longCastAbilityOffCoolDown = false;
+                currentlyCasting = true;
+                StartCoroutine(LongCastAbility());
+                StopCoroutine(LongCastAbility());
+            }
         }
 
-        //Quick Attack
-        if(Input.GetMouseButton(0) && quickCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
-        {
-            quickCastAbilityOffCoolDown = false;
-            currentlyCasting = true;
-            StartCoroutine(QuickCastAbility());
-            StopCoroutine(QuickCastAbility());
-        }
 
-        //Long Attack
-        if(Input.GetMouseButton(1) && longCastAbilityOffCoolDown == true && this.tag == "Swordsman" && currentlyCasting == false)
-        {
-            longCastAbilityOffCoolDown = false;
-            currentlyCasting = true;
-            StartCoroutine(LongCastAbility());
-            StopCoroutine(LongCastAbility());
-        }
     }
 
     public void serverUpdate()
@@ -188,35 +190,44 @@ public class PlayerObjectController : NetworkBehaviour
         }
     }
 
+    [Command]
+    void CmdSpawnobject(Vector3 camfor, Quaternion cameul)
+    {
+
+        GameObject ability = Instantiate(quickCastAbilityObject);
+        ability.transform.position = this.transform.position;
+        ability.GetComponent<Rigidbody>().velocity = new Vector3(camfor.x,camfor.y,camfor.z) * 50;
+        ability.transform.rotation = cameul;
+
+        NetworkServer.Spawn(ability);
+
+    }
+
     IEnumerator QuickCastAbility()
     {
         if (cam == null) yield break;
         yield return new WaitForSeconds(.4f);
-        GameObject ability = Instantiate(quickCastAbilityObject) as GameObject;
-        ability.transform.position = this.transform.position;
-        ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 50;
-        ability.transform.rotation = cam.transform.rotation;
+
+        CmdSpawnobject(cam.transform.forward, cam.transform.rotation);
         yield return new WaitForSeconds(.2f);
         currentlyCasting = false;
         yield return new WaitForSeconds(2f);
         quickCastAbilityOffCoolDown = true;
         yield return new WaitForSeconds(4f);
-        Destroy(ability, 1.0f);
+        //Destroy(ability, 1.0f);
     }
 
     IEnumerator LongCastAbility()
     {
         if (cam == null) yield break;
         yield return new WaitForSeconds(1f);
-        GameObject ability = Instantiate(longCastAbilityObject) as GameObject;
-        ability.transform.position = this.transform.position;
-        ability.GetComponent<Rigidbody>().velocity = cam.transform.forward * 70;
-        ability.transform.rotation = cam.transform.rotation;
+        
+        CmdSpawnobject(cam.transform.forward, cam.transform.rotation);
         yield return new WaitForSeconds(.5f);
         currentlyCasting = false;
         yield return new WaitForSeconds(3f);
         quickCastAbilityOffCoolDown = true;
         yield return new WaitForSeconds(4f);
-        Destroy(ability, 1.0f);
+        //Destroy(ability, 1.0f);
     } 
 }

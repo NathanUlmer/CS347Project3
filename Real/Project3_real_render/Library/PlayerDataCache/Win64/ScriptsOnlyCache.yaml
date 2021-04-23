@@ -47,7 +47,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkAnimator
-    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkLobbyManager
     - UnityEngine.Networking.NetworkLobbyPlayer
@@ -1067,4 +1066,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/InGame.unity
-  playerPath: C:/Users/Matt/Documents/GitHub/CS347Project3/Real/Project3_real_render/Build/Project3_real_render.exe
+  playerPath: C:/Users/quaz9/Documents/MAE 490/CS347Project3/Real/Project3_real_render/Build/Project3_real_render.exe
