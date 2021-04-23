@@ -12,10 +12,13 @@ ScriptsOnlyBuild:
     - PlayerObjectController
     - QuickCastAbility
     - Ragdoll
+    - RoundController
     - SwordsmanAnimation
     - TeleporterController
+    - TimeController
     - VehicleCamera
     - VehicleController
+    - WinController
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -29,10 +32,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -44,11 +45,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
-    com.unity.multiplayer-hlapi.Editor.dll:
-    - UnityEditor.NetworkAnimatorEditor
-    - UnityEditor.NetworkBehaviourInspector
-    - UnityEditor.NetworkIdentityEditor
-    - UnityEditor.NetworkTransformEditor
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkAnimator
     - UnityEngine.Networking.NetworkCallbacks
@@ -102,17 +98,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10548}
     - Class: 114
-      Script: {instanceID: 11070}
+      Script: {instanceID: 10984}
     - Class: 114
-      Script: {instanceID: 11124}
+      Script: {instanceID: 11072}
     - Class: 114
-      Script: {instanceID: 11528}
+      Script: {instanceID: 11126}
     - Class: 114
-      Script: {instanceID: 11770}
+      Script: {instanceID: 11530}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 11772}
     - Class: 114
-      Script: {instanceID: 13476}
+      Script: {instanceID: 12748}
+    - Class: 114
+      Script: {instanceID: 12894}
+    - Class: 114
+      Script: {instanceID: 13480}
+    - Class: 114
+      Script: {instanceID: 40474}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,31 +191,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 11070}
+      Script: {instanceID: 11072}
     - Class: 114
-      Script: {instanceID: 11292}
+      Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 11524}
+      Script: {instanceID: 11526}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12748}
     - Class: 114
-      Script: {instanceID: 12756}
+      Script: {instanceID: 12758}
     - Class: 114
-      Script: {instanceID: 12826}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13372}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13476}
+      Script: {instanceID: 13480}
     - Class: 114
-      Script: {instanceID: 13558}
+      Script: {instanceID: 13562}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -535,6 +537,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 7b1a4d01a07da095f4657bc97adeac83
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimeController
+  - hash:
+      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -619,7 +627,7 @@ ScriptsOnlyBuild:
     className: NonSwordsmanAnimation
   - hash:
       serializedVersion: 2
-      Hash: 92ff1215d219fd00514aab46a284cfd6
+      Hash: e027d1cb372144861afb5c36a2a9fbaa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LobbyScript
@@ -895,6 +903,12 @@ ScriptsOnlyBuild:
     className: LongCastAbility
   - hash:
       serializedVersion: 2
+      Hash: 927fcea0c5c3e9034dedd150569b14b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoundController
+  - hash:
+      serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -1049,6 +1063,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f443a775b21a122ffb24702789d77b84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WinController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Lobby.unity

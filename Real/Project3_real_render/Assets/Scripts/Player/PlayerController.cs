@@ -163,6 +163,7 @@ public class PlayerController : NetworkBehaviour
             Debug.Log("Spawn Player " + playerID.ToString() + " You are Infected");
             position = Rutil.GetSpawnPosition(true);
             PPrefab = Rutil.GetSpawnGameObject(true);
+            CmdGiveLobbyScriptInfectedPlayer(2);
         }
         else
         {
@@ -170,6 +171,7 @@ public class PlayerController : NetworkBehaviour
             // Create Player object on server and sets position
             position = Rutil.GetSpawnPosition(false);
             PPrefab = Rutil.GetSpawnGameObject(false);
+            CmdGiveLobbyScriptPlayer(1);
 
         }
        
@@ -177,7 +179,7 @@ public class PlayerController : NetworkBehaviour
 
         //go.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
         myPlayerUnit = go;
-
+        
         // Make server propagate object to clients
         NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
     }
@@ -218,5 +220,18 @@ public class PlayerController : NetworkBehaviour
     void CmdIncrementPlayers()
     {
         ls.totalPlayers += 1;
+    }
+
+    [Command]
+    void CmdGiveLobbyScriptPlayer(int player)
+    {
+        ls.numPlayers += 1;
+    }
+
+
+    [Command]
+    void CmdGiveLobbyScriptInfectedPlayer(int player)
+    {
+        ls.numInfectedPlayers += 1;
     }
 }

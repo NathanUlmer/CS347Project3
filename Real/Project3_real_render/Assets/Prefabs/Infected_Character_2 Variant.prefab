@@ -582,7 +582,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   gravity: -8
   jumpHeight: 2
-  groundDis: 0.3
+  groundDis: 0.2
   quickCastAbilityObject: {fileID: 1964535781089396705, guid: aa34c71dbe00d4158a6810a2da11fc42,
     type: 3}
   longCastAbilityObject: {fileID: 7488657022177578343, guid: 881dd4849a08f4d63a056ce433619a96,

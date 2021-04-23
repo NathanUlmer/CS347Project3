@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class VehicleController : MonoBehaviour
+using UnityEngine.Networking;
+public class VehicleController : NetworkBehaviour
 {
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
