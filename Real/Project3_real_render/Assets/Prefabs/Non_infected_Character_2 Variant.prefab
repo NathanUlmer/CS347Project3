@@ -43,9 +43,10 @@ AudioSource:
   m_GameObject: {fileID: 1774851983728419914}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4cc60516354e8d24cb5e1b3952a39c00,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 096f65587cb63a443939207432f11806, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -90,7 +91,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -204,6 +205,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1335
   headbone: {fileID: 4391909203434614996}
+  ls: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -8
@@ -296,6 +298,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: c991bd5ba0bc64a38b6f7627360cc55f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a6b513b713ea4e45ae02059f4807f3b, type: 2}
     - target: {fileID: -4216859302048453862, guid: c991bd5ba0bc64a38b6f7627360cc55f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,11 +358,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: c991bd5ba0bc64a38b6f7627360cc55f,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4a6b513b713ea4e45ae02059f4807f3b, type: 2}
     - target: {fileID: -3548337585052231751, guid: c991bd5ba0bc64a38b6f7627360cc55f,
         type: 3}
       propertyPath: m_Enabled

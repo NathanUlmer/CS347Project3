@@ -5544,6 +5544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   headbone: {fileID: 6709378871089853175}
+  ls: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -10
@@ -5578,9 +5579,10 @@ AudioSource:
   m_GameObject: {fileID: 8740986420252436073}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4cc60516354e8d24cb5e1b3952a39c00,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9e5b21ee8e56e9d4984010b0f7502e77, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5625,7 +5627,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
