@@ -91,9 +91,10 @@ public class LobbyScript : NetworkBehaviour
 
                 }
 
-                if (numPlayers + numInfectedPlayers > 0)
+                if (numPlayers + numInfectedPlayers > 0 && timecontrol.elapsedTime>10)
                 {
-                    if (numInfectedPlayers == 0)
+
+                    if (numInfectedPlayers == 0 || timecontrol.elapsedTime >180)
                     {
                         winMessage = "The Normies Have Won!";
                         RpcIncrementRound();
@@ -104,6 +105,8 @@ public class LobbyScript : NetworkBehaviour
                         winMessage = "The Infected Have Won!";
                         RpcIncrementRound();
                     }
+
+
                 }
             }
             Debug.Log("*****Players Count: " + (numPlayers + numInfectedPlayers).ToString());

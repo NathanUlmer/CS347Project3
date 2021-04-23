@@ -12,6 +12,8 @@ public class PlayerObjectController : NetworkBehaviour
     public Transform headbone;
     //Ragdoll ragdoll;
 
+    public LobbyScript ls;
+
     //Public Variables
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
@@ -38,6 +40,7 @@ public class PlayerObjectController : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ls = GameObject.Find("ServerStateManager").GetComponent<LobbyScript>();
         //Grab Camera Target
         isGrounded = false;
         Debug.Log("Reached Player Object Controller");
@@ -190,6 +193,18 @@ public class PlayerObjectController : NetworkBehaviour
         }
     }
 
+    public void kill()
+    {
+        if(tag == "Swordsman")
+        {
+            CmdGiveLobbyScriptInfectedPlayer(-1);
+        }
+        else
+        {
+            CmdGiveLobbyScriptPlayer(-1);
+        }
+    }
+
     [Command]
     void CmdSpawnobject(Vector3 camfor, Quaternion cameul)
     {
@@ -229,5 +244,20 @@ public class PlayerObjectController : NetworkBehaviour
         quickCastAbilityOffCoolDown = true;
         yield return new WaitForSeconds(4f);
         //Destroy(ability, 1.0f);
-    } 
+    }
+
+
+
+    [Command]
+    void CmdGiveLobbyScriptPlayer(int player)
+    {
+        ls.numPlayers += player;
+    }
+
+
+    [Command]
+    void CmdGiveLobbyScriptInfectedPlayer(int player)
+    {
+        ls.numInfectedPlayers += player;
+    }
 }

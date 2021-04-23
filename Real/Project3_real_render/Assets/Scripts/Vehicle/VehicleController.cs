@@ -14,6 +14,8 @@ public class VehicleController : NetworkBehaviour
     private float currentbreakForce;
     private bool isBreaking;
 
+    public GameObject player;
+
     //Health Variables
     public int maxHealth = 20;
     public int health;
@@ -133,6 +135,8 @@ public class VehicleController : NetworkBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            player.SetActive(true);
+            player.GetComponent<PlayerObjectController>().kill();
         }
     }
 }

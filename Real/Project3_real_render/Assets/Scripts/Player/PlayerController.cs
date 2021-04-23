@@ -222,6 +222,8 @@ public class PlayerController : NetworkBehaviour
         ls.totalPlayers += 1;
     }
 
+
+
     [Command]
     void CmdGiveLobbyScriptPlayer(int player)
     {

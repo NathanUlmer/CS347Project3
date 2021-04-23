@@ -10,6 +10,8 @@ public class EnterVehicle : MonoBehaviour
     public GameObject guiObj;
     GameObject player;
 
+
+
     //Initialize Car
     void Start()
     {
@@ -30,6 +32,7 @@ public class EnterVehicle : MonoBehaviour
                 player.transform.parent = other.gameObject.transform;
                 vehicleScript.enabled = true;
 
+                vehicleScript.player = player;
                 //Disable Character
                 playerRender = GetComponentInChildren(typeof(SkinnedMeshRenderer), true) as SkinnedMeshRenderer;
                 

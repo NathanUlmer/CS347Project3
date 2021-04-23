@@ -249,7 +249,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 64869ad0844e22d143fc254b38994c7c
+      Hash: a209792d618155d4d55bec2556489d90
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VehicleController
@@ -807,7 +807,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 2e63448a6227c554414e40adf3104b1b
+      Hash: 472bf0f00dbcc1a13529e9009a0d000e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerObjectController
