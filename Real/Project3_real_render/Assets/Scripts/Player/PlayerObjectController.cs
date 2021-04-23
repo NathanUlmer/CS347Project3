@@ -165,15 +165,18 @@ public class PlayerObjectController : NetworkBehaviour
         {
             inVehicle = false;
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
         //Swordsman Gets Hit by Car
-        if(this.tag == "Swordsman" && other.gameObject.tag == "Vehicle")
+        if (this.tag == "Swordsman" && other.gameObject.tag == "Vehicle")
         {
             //5 is the vehicle speed that needs to be normalized
             float numberFromDistribution = Probabilities.X2PDF(1, 5);
             float randomNumber = Random.value;
 
-            if(randomNumber <= numberFromDistribution)
+            if (randomNumber <= numberFromDistribution)
             {
                 this.GetComponent<Rigidbody>().velocity = Vector3.Scale(other.gameObject.GetComponent<Rigidbody>().velocity, new Vector3(1.3f, 1.3f, 1.3f));
             }
@@ -187,6 +190,7 @@ public class PlayerObjectController : NetworkBehaviour
 
     IEnumerator QuickCastAbility()
     {
+        if (cam == null) yield break;
         yield return new WaitForSeconds(.4f);
         GameObject ability = Instantiate(quickCastAbilityObject) as GameObject;
         ability.transform.position = this.transform.position;
@@ -202,6 +206,7 @@ public class PlayerObjectController : NetworkBehaviour
 
     IEnumerator LongCastAbility()
     {
+        if (cam == null) yield break;
         yield return new WaitForSeconds(1f);
         GameObject ability = Instantiate(longCastAbilityObject) as GameObject;
         ability.transform.position = this.transform.position;
