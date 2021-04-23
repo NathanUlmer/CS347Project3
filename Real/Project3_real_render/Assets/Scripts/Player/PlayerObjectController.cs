@@ -178,7 +178,9 @@ public class PlayerObjectController : NetworkBehaviour
         if (this.tag == "Swordsman" && other.gameObject.tag == "Vehicle")
         {
             //5 is the vehicle speed that needs to be normalized
-            float numberFromDistribution = Probabilities.X2PDF(1, 5);
+            //Randomized Variables
+
+            float numberFromDistribution = Probabilities.X2PDF(1, Vector3.Scale(other.gameObject.GetComponent<Rigidbody>().velocity, new Vector3(.5f, .5f, .5f)).magnitude);
             float randomNumber = Random.value;
 
             if (randomNumber <= numberFromDistribution)
