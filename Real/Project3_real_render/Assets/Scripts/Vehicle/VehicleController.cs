@@ -75,6 +75,7 @@ public class VehicleController : NetworkBehaviour
     //Handle Car Inputs
     private void GetInput()
     {
+        //if (!isLocalPlayer) return;
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);

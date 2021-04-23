@@ -47,6 +47,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkAnimator
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkLobbyManager
     - UnityEngine.Networking.NetworkLobbyPlayer
