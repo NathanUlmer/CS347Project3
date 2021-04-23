@@ -15,7 +15,7 @@ public class VehicleController : NetworkBehaviour
     private bool isBreaking;
 
     //Health Variables
-    public int maxHealth = 10;
+    public int maxHealth = 20;
     public int health;
 
     //Camera Variables

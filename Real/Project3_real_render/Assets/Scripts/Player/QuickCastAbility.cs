@@ -16,7 +16,7 @@ public class QuickCastAbility : MonoBehaviour
             vehicle.TakeDamage(damage);
         }
         //Destroy Slash On Collision
-        if (this.tag != "Swordsman")
+        if (other.tag == "Vehicle")
         {
             Destroy(this.gameObject);
         }

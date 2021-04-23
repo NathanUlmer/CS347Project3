@@ -185,7 +185,7 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.1
   gravity: -8
-  jumpHeight: 2
+  jumpHeight: 1
   groundDis: 0.2
   quickCastAbilityObject: {fileID: 1964535781089396705, guid: aa34c71dbe00d4158a6810a2da11fc42,
     type: 3}

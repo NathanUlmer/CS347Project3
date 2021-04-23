@@ -10,7 +10,7 @@ public class PlayerObjectController : NetworkBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public Transform headbone;
-    Ragdoll ragdoll;
+    //Ragdoll ragdoll;
 
     //Public Variables
     public float speed = 6f;
@@ -39,6 +39,7 @@ public class PlayerObjectController : NetworkBehaviour
     void Start()
     {
         //Grab Camera Target
+        isGrounded = false;
         Debug.Log("Reached Player Object Controller");
         transform.localScale = new Vector3(0.1f,0.1f,0.1f);
         if (hasAuthority)
@@ -115,13 +116,16 @@ public class PlayerObjectController : NetworkBehaviour
                 isJumping = true;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
-            else if (isGrounded) isJumping = false;
+            else if (isGrounded)
+            {
+                isJumping = false;
+            }
 
             //Debug Ragdoll
-            if (Input.GetKeyDown("g") && this.tag == "Swordsman")
+            /*if (Input.GetKeyDown("g") && this.tag == "Swordsman")
             {
                 ragdoll.die();
-            }
+            }*/
 
             //Gravitational force
             if (!isGrounded)
@@ -130,7 +134,7 @@ public class PlayerObjectController : NetworkBehaviour
             }
 
             //Directional movement inputs
-            controller.Move(velocity);
+            controller.Move(velocity * Time.deltaTime);
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -175,7 +179,8 @@ public class PlayerObjectController : NetworkBehaviour
             }
             else
             {
-                ragdoll.die();
+                Destroy(this.gameObject);
+                //ragdoll.die();
             }
         }
     }

@@ -3369,7 +3369,6 @@ GameObject:
   - component: {fileID: 613380825}
   - component: {fileID: 613380828}
   - component: {fileID: 613380827}
-  - component: {fileID: 613380826}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -3391,19 +3390,6 @@ Transform:
   m_Father: {fileID: 561693834}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &613380826
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613380824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!23 &613380827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4592,7 +4578,6 @@ GameObject:
   - component: {fileID: 805568417}
   - component: {fileID: 805568420}
   - component: {fileID: 805568419}
-  - component: {fileID: 805568418}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -4614,19 +4599,6 @@ Transform:
   m_Father: {fileID: 561693834}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &805568418
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805568416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!23 &805568419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6531,7 +6503,6 @@ GameObject:
   - component: {fileID: 1428590426}
   - component: {fileID: 1428590429}
   - component: {fileID: 1428590428}
-  - component: {fileID: 1428590427}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -6553,19 +6524,6 @@ Transform:
   m_Father: {fileID: 561693834}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1428590427
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428590425}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!23 &1428590428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7228,7 +7186,6 @@ GameObject:
   - component: {fileID: 1590346934}
   - component: {fileID: 1590346937}
   - component: {fileID: 1590346936}
-  - component: {fileID: 1590346935}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -7250,19 +7207,6 @@ Transform:
   m_Father: {fileID: 561693834}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1590346935
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590346933}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!23 &1590346936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7537,7 +7481,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674821864}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 46.9, y: 7.5, z: 22.89}
@@ -9578,11 +9522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495972470270213085, guid: 30f699074a118f041ae38b7b0ae1ec38,
-        type: 3}
-      propertyPath: m_Name
-      value: NonSwordsman_SpawnPoint_2
-      objectReference: {fileID: 0}
     - target: {fileID: 495972470270213086, guid: 30f699074a118f041ae38b7b0ae1ec38,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9637,6 +9576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495972470270213085, guid: 30f699074a118f041ae38b7b0ae1ec38,
+        type: 3}
+      propertyPath: m_Name
+      value: NonSwordsman_SpawnPoint_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f699074a118f041ae38b7b0ae1ec38, type: 3}
@@ -9704,11 +9648,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3132708731178304830, guid: c751fcfc0b549a346806f1c560f55627,
-        type: 3}
-      propertyPath: m_Name
-      value: NonSwordsman_SpawnPoint_3
-      objectReference: {fileID: 0}
     - target: {fileID: 3132708731178304831, guid: c751fcfc0b549a346806f1c560f55627,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9764,6 +9703,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132708731178304830, guid: c751fcfc0b549a346806f1c560f55627,
+        type: 3}
+      propertyPath: m_Name
+      value: NonSwordsman_SpawnPoint_3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c751fcfc0b549a346806f1c560f55627, type: 3}
 --- !u!1001 &4044336588687589307
@@ -9773,11 +9717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4044336589820905047, guid: b1071bb6af6c3094e9ef63e0ca6c1fb4,
-        type: 3}
-      propertyPath: m_Name
-      value: NonSwordsman_SpawnPoint_4
-      objectReference: {fileID: 0}
     - target: {fileID: 4044336589820905046, guid: b1071bb6af6c3094e9ef63e0ca6c1fb4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9833,6 +9772,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044336589820905047, guid: b1071bb6af6c3094e9ef63e0ca6c1fb4,
+        type: 3}
+      propertyPath: m_Name
+      value: NonSwordsman_SpawnPoint_4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1071bb6af6c3094e9ef63e0ca6c1fb4, type: 3}
 --- !u!81 &4175989758633710779
@@ -9850,11 +9794,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4353192785381397744, guid: db552a69396a9054a858eee70ad8875f,
-        type: 3}
-      propertyPath: m_Name
-      value: Swordsman_SpawnPoint_4
-      objectReference: {fileID: 0}
     - target: {fileID: 4353192785381397751, guid: db552a69396a9054a858eee70ad8875f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9910,6 +9849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4353192785381397744, guid: db552a69396a9054a858eee70ad8875f,
+        type: 3}
+      propertyPath: m_Name
+      value: Swordsman_SpawnPoint_4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db552a69396a9054a858eee70ad8875f, type: 3}
 --- !u!1 &4816538342310292628
@@ -9954,11 +9898,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4827333913617501247, guid: 5051e27558c629d41827e59850f302df,
-        type: 3}
-      propertyPath: m_Name
-      value: NonSwordsman_SpawnPoint_1
-      objectReference: {fileID: 0}
     - target: {fileID: 4827333913617501244, guid: 5051e27558c629d41827e59850f302df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10013,6 +9952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827333913617501247, guid: 5051e27558c629d41827e59850f302df,
+        type: 3}
+      propertyPath: m_Name
+      value: NonSwordsman_SpawnPoint_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5051e27558c629d41827e59850f302df, type: 3}
@@ -10187,11 +10131,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6843738988371182346, guid: af4a8441b13e4f24dac30feb0b423428,
-        type: 3}
-      propertyPath: m_Name
-      value: Swordsman_SpawnPoint_2
-      objectReference: {fileID: 0}
     - target: {fileID: 6843738988371182349, guid: af4a8441b13e4f24dac30feb0b423428,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10247,6 +10186,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6843738988371182346, guid: af4a8441b13e4f24dac30feb0b423428,
+        type: 3}
+      propertyPath: m_Name
+      value: Swordsman_SpawnPoint_2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af4a8441b13e4f24dac30feb0b423428, type: 3}
 --- !u!114 &7553320459334399401
@@ -10289,11 +10233,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8743608726499350605, guid: eeb736743538b2c46aa83a1edbf9994d,
-        type: 3}
-      propertyPath: m_Name
-      value: Swordsman_SpawnPoint_1
-      objectReference: {fileID: 0}
     - target: {fileID: 8743608726499350606, guid: eeb736743538b2c46aa83a1edbf9994d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10348,6 +10287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743608726499350605, guid: eeb736743538b2c46aa83a1edbf9994d,
+        type: 3}
+      propertyPath: m_Name
+      value: Swordsman_SpawnPoint_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb736743538b2c46aa83a1edbf9994d, type: 3}

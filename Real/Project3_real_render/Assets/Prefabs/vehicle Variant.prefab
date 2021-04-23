@@ -476,8 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd22f100c8769246896ad81be13ec5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  health: 0
+  maxHealth: 20
+  health: 20
   offset: {x: 0, y: 0, z: 0}
   cameracontrol: {fileID: 0}
   cam: {fileID: 0}
